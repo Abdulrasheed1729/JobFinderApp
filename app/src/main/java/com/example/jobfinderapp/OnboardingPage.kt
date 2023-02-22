@@ -19,9 +19,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
 @Composable
-fun OnboardingPage() {
+fun OnboardingPage(
+    navController: NavController
+) {
     Scaffold(
         backgroundColor = Color.White,
         modifier = Modifier.fillMaxSize()
@@ -72,7 +75,9 @@ fun OnboardingPage() {
             )
             Spacer(modifier = Modifier.height(100.dp))
             Button(
-                onClick = { },
+                onClick = {
+                    navController.navigate(Page.HomePage.route)
+                },
                 modifier = Modifier
                     .height(85.dp)
                     .width(85.dp),
@@ -99,5 +104,5 @@ fun OnboardingPage() {
 @Preview(showBackground = true)
 @Composable
 fun OnboardingPagePreview() {
-    OnboardingPage()
+//    OnboardingPage()
 }
